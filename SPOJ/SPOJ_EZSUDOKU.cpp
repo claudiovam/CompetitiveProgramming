@@ -61,13 +61,13 @@ void solveSudoku(int r, int c) {
 }
 
 void solve() {
-  cntSol = 0;
-  validBoard = true;
+	cntSol = 0;
+	validBoard = true;
   memset(Fixed, 0, sizeof Fixed);
   memset(uRow,  0, sizeof uRow);
   memset(uCol,  0, sizeof uCol);
   memset(uQuad, 0, sizeof uQuad);
-  for (int i = 0; i < n; ++i) {
+	for (int i = 0; i < n; ++i) {
     for (int j = 0; j < n; ++j) {
       int num; scanf("%d", &num);
       Board[i][j] = num;
