@@ -42,7 +42,7 @@ int heuristic() {
 			if (puzzle[i][j] == 0 or puzzle[i][j] == i*n + j + 1) continue;
 			int num = puzzle[i][j] - 1;
 			ManhattanDist += abs(num / n - i) + abs(num % n - j);
-			if (i*4 + j + 1 == puzzle[num / n][num % n] and (i == num / n or j == num % n)) {
+			if (i*n + j + 1 == puzzle[num / n][num % n] and (i == num / n or j == num % n)) {
 				linearConflicts++;
 			}
 		}
