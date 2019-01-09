@@ -43,7 +43,7 @@ int heuristic() {
 			int num = puzzle[i][j] - 1;
 			ManhattanDist += abs(num / n - i) + abs(num % n - j);
 			if (i*n + j + 1 == puzzle[num / n][num % n] and (i == num / n or j == num % n)) {
-				linearConflicts++;
+				++linearConflicts;
 			}
 		}
 	}
@@ -88,7 +88,7 @@ bool existSol(int r, int c) {
 	for (int i = 0; i < n; ++i) {
 		for (int j = 0; j < n; ++j) {
 			for (int k = 0; k < i*n + j; ++k) {
-				if (puzzle[i][j] != 0 and puzzle[k/4][k%4] != 0 and puzzle[k/4][k%4] > puzzle[i][j]) {
+				if (puzzle[i][j] != 0 and puzzle[k / n][k % n] != 0 and puzzle[k / n][k % n] > puzzle[i][j]) {
 					++inv;
 				}
 			}
