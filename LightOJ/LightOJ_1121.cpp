@@ -3,8 +3,8 @@
  *  @tags Advanced Complete Search: IDA*
  *  @idea
  *  - Para no obtener TLE, se analiza estado start si existe una solución
- * 	- Heurísticas Admisibles: Distancia de Manhattan, Conflictos Lineales
- * 	- Para no obtener TLE, en DFS se evita ciclos de 2 estados (volver a visitar el estado padre)
+ *  - Heurísticas Admisibles: Distancia de Manhattan, Conflictos Lineales
+ *  - Para no obtener TLE, en DFS se evita ciclos de 2 estados (volver a visitar el estado padre)
  */
 
 #include <bits/stdc++.h>
@@ -27,7 +27,7 @@ int n = N;
 void showSteps(int n) {
 	for (int i = 0; i < n; ++i) {
 		printf("%c", dir[steps[i]]);
-	} printf("\n");
+	} 	printf("\n");
 }
 
 bool isValid(int i, int n) {
@@ -85,17 +85,17 @@ int IDA_Star(int r, int c) {
 
 bool existSol(int r, int c) {
 	int inv = 0;
-  for (int i = 0; i < n; ++i) {
-    for (int j = 0; j < n; ++j) {
-      for (int k = 0; k < i*n + j; ++k) {
-			  if (puzzle[i][j] != 0 and puzzle[k/4][k%4] != 0 and puzzle[k/4][k%4] > puzzle[i][j]) {
-			    ++inv;
-      	}
-      }
-    }
-  }
-  int row = (r*n + c) / n;
-  return (inv + row) & 1;
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < n; ++j) {
+			for (int k = 0; k < i*n + j; ++k) {
+				if (puzzle[i][j] != 0 and puzzle[k/4][k%4] != 0 and puzzle[k/4][k%4] > puzzle[i][j]) {
+					++inv;
+				}
+			}
+		}
+	}
+	int row = (r*n + c) / n;
+	return (inv + row) & 1;
 }
 
 void solve() {
@@ -121,5 +121,5 @@ int main() {
 		printf("Case %d: ", c);
 		solve();
 	}
-  return 0;
+	return 0;
 }
