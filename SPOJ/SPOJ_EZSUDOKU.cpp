@@ -68,7 +68,7 @@ void solve() {
   	memset(uCol,  0, sizeof uCol);
   	memset(uQuad, 0, sizeof uQuad);
 	for (int i = 0; i < n; ++i) {
-    	for (int j = 0; j < n; ++j) {
+		for (int j = 0; j < n; ++j) {
 			int num; scanf("%d", &num);
 			Board[i][j] = num;
 			if (Board[i][j] != 0) {
@@ -79,7 +79,7 @@ void solve() {
 					validBoard = false;
 				}
 			}
-    	}
+		}
   	}
 	if (validBoard) {
 		solveSudoku(0, 0);
