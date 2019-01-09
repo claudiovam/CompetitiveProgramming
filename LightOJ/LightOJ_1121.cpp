@@ -2,9 +2,9 @@
  *  Problema clásico: 15 Puzzle Game
  *  @tags Advanced Complete Search: IDA*
  *  @idea
- *  - Para no obtener TLE, se analiza estado start si existe una solución
- *  - Heurísticas Admisibles: Distancia de Manhattan, Conflictos Lineales
- *  - Para no obtener TLE, en DFS se evita ciclos de 2 estados (volver a visitar el estado padre)
+ *	- Para no obtener TLE, se analiza estado start si existe una solución
+ *  	- Heurísticas Admisibles: Distancia de Manhattan, Conflictos Lineales
+ *  	- Para no obtener TLE, en DFS se evita ciclos de 2 estados (volver a visitar el estado padre)
  */
 
 #include <bits/stdc++.h>
